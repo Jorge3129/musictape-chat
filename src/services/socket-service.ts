@@ -1,8 +1,8 @@
 import {Socket} from "socket.io";
-import {FromClientEvents, FromServerEvents} from "../../constants/socket-events";
-import {Message, MessageStatus, NoId} from "../../models/message";
-import messageService from "../message-service";
-import {waitFor} from "../../utils/async/wait";
+import {FromClientEvents, FromServerEvents} from "../constants/socket-events";
+import {Message, MessageStatus, NoId} from "../models/message";
+import messageService from "./message-service";
+import {waitFor} from "../utils/async/wait";
 
 export const userToSocketMap = new Map<number, string>()
 

@@ -17,7 +17,7 @@ export const tableQueries = {
             authorId INT NOT NULL,
             recipientId INT NOT NULL,
             chatId INT NOT NULL,
-            FOREIGN KEY (chatId) REFERENCES chats(id)
+            FOREIGN KEY (chatId) REFERENCES chats(id) ON DELETE CASCADE
         );
     `,
     CREATE_USERS_CHATS: `

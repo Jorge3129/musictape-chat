@@ -10,7 +10,7 @@ import cors from 'cors'
 // import 'express-async-errors';
 
 import BaseRouter from './routes/api';
-import { onConnect } from './services/socket/socket-service';
+import { onConnect } from './services/socket-service';
 
 const app = express();
 

@@ -2,7 +2,7 @@ import server from "./server";
 import {DBConnection} from "./repos/db-connection";
 
 const SERVER_MESSAGE = 'Express server started on port: ';
-const PORT = (process.env.PORT || 9456);
+const PORT = (process.env.PORT || 9457);
 
 const init = async () => {
     const con = await DBConnection.getInstance()
@@ -13,8 +13,6 @@ const init = async () => {
 
     server.listen(PORT, () => {
         console.log(SERVER_MESSAGE + PORT)
-        // logger.info(serverStartMsg + port);
-        const a = [" socket"];
     });
 }
 

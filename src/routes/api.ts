@@ -1,10 +1,8 @@
-import { Router } from 'express';
-import { authMw } from './middleware';
+import {Router} from 'express';
 import chatRouter from "./chat-router";
-import messageRouter from "./message-router";
+import {authMiddleware} from "./auth-middleware";
 
 const apiRouter = Router();
-apiRouter.use('/chats', chatRouter)
-apiRouter.use('/messages', messageRouter)
+apiRouter.use('/chats', authMiddleware, chatRouter)
 
 export default apiRouter;

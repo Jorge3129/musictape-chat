@@ -7,7 +7,7 @@ import {createMockMessageArray} from "../utils/entities/message-utils";
 import {Message, NoId} from "../models/message";
 
 export class DBConnection {
-    pool?: Pool;
+    private pool?: Pool;
 
     private static INSTANCE?: DBConnection;
 
@@ -85,7 +85,7 @@ export class DBConnection {
         await this.query(tableQueries.DROP_USERS_CHATS);
     }
 
-    end() {
+    public end() {
         this.pool?.end();
     }
 }

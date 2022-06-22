@@ -8,4 +8,6 @@ export interface Chat {
     lastMessage: Message
 }
 
+
+
 export type NewChat = Omit<Chat, "id" | "lastMessage">

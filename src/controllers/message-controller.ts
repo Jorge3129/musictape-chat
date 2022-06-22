@@ -14,29 +14,6 @@ export class MessageController {
             next(e)
         }
     }
-
-    async editMessage(req: Request, res: Response, next: NextFunction) {
-        try {
-            const {message} = req.body;
-            const res = await messageService.editMessage(message.id, message.content);
-            res.status(OK).json(res);
-        } catch (e) {
-            next(e)
-        }
-    }
-
-    async deleteMessage(req: Request, res: Response, next: NextFunction) {
-        try {
-            const {messageId} = req.params;
-            const parsedId = parseInt(messageId)
-            if (isNaN(parsedId)) throw new Error('No message id')
-            const res = await messageService.deleteMessage(parsedId);
-            res.status(OK).json(res);
-        } catch (e) {
-            next(e)
-        }
-    }
-
 }
 
 export default new MessageController()
